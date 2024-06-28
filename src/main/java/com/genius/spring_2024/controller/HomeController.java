@@ -13,9 +13,9 @@ public class HomeController {
         return String.format("hello, %d", id);
     }
 
-    @GetMapping("")
+    @GetMapping("v2")
     public UserVo homeV2(UserVo userVo) {
-        userVo
+//        userVo
         return userVo;
     }
 
