@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserVo {
 
-//    @JsonSerialize(converter = IntToLongConverter.class)
+    @JsonSerialize(converter = IntToLongConverter.class)
     @JsonDeserialize(converter = LongToIntConverter.class)
     private Integer id;
 

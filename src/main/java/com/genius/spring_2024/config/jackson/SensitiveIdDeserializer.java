@@ -16,6 +16,7 @@ public class SensitiveIdDeserializer extends JsonDeserializer<Long> {
         if (p == null || p.getText() == null) {
             return null;
         }
+        log.info("deserialize into..., p.value={}", p.getLongValue());
         try {
             long value = p.getLongValue();
             return LongEncoder.decode48(value);

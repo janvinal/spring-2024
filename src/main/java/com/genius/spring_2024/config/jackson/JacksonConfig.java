@@ -13,25 +13,25 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 @Configuration
 public class JacksonConfig {
 
-    @Bean
-    @Primary
-    public ObjectMapper objectMapper(Jackson2ObjectMapperBuilder builder, SensitiveFieldAnnotationIntrospector introspector) {
-        log.info("objectMapper into..., introspector={}", introspector);
-        ObjectMapper objectMapper = builder.createXmlMapper(false).build();
-        AnnotationIntrospector annotationIntrospector = objectMapper.getSerializationConfig().getAnnotationIntrospector();
-        AnnotationIntrospector pair = AnnotationIntrospectorPair.pair(annotationIntrospector, introspector);
-        objectMapper.setAnnotationIntrospector(pair);
-        return objectMapper;
-    }
-
-    @Bean
-    public SensitiveFieldAnnotationIntrospector sensitiveFieldAnnotationIntrospector() {
-        return new SensitiveFieldAnnotationIntrospector();
-    }
-
-    @Bean
-    public SensitiveFieldSerializer sensitiveFieldSerializer() {
-        return new SensitiveFieldSerializer();
-    }
+//    @Bean
+//    @Primary
+//    public ObjectMapper objectMapper(Jackson2ObjectMapperBuilder builder, SensitiveFieldAnnotationIntrospector introspector) {
+//        log.info("objectMapper into..., introspector={}", introspector);
+//        ObjectMapper objectMapper = builder.createXmlMapper(false).build();
+//        AnnotationIntrospector annotationIntrospector = objectMapper.getSerializationConfig().getAnnotationIntrospector();
+//        AnnotationIntrospector pair = AnnotationIntrospectorPair.pair(annotationIntrospector, introspector);
+//        objectMapper.setAnnotationIntrospector(pair);
+//        return objectMapper;
+//    }
+//
+//    @Bean
+//    public SensitiveFieldAnnotationIntrospector sensitiveFieldAnnotationIntrospector() {
+//        return new SensitiveFieldAnnotationIntrospector();
+//    }
+//
+//    @Bean
+//    public SensitiveFieldSerializer sensitiveFieldSerializer() {
+//        return new SensitiveFieldSerializer();
+//    }
 
 }

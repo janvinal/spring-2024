@@ -1,10 +1,10 @@
 package com.genius.spring_2024.controller;
 
 import com.genius.spring_2024.vo.UserVo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController("/")
 public class HomeController {
 
@@ -15,7 +15,14 @@ public class HomeController {
 
     @GetMapping("v2")
     public UserVo homeV2(UserVo userVo) {
-//        userVo
+        userVo.setId(1);
+        return userVo;
+    }
+
+    @PostMapping("v3")
+    public UserVo homeV3(@RequestBody UserVo userVo) {
+        log.info("homeV3 into... userVo={}", userVo);
+        userVo.setId(1);
         return userVo;
     }
 
